@@ -132,7 +132,7 @@ try:
                                          initialfile=output_default_filename)).resolve()
     
     print(f'Writting [{output_path}]')
-    with output_path.open("w") as csv_file:
+    with output_path.open("w", newline='') as csv_file:
         writer = csvwritter(csv_file)
         writer.writerow(SAMPLE_HEADERS_BY_RATE[selected_rate]['TITLES'])
         writer.writerows(samples)
